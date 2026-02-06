@@ -60,7 +60,7 @@ app.get('/api/scores', async (req, res) => {
             id: p.id,
             name: p.name,
             area: p.party, // Map DB 'party' column to API 'area' field for frontend
-            district: null, // Removed district as per new data source
+            district: p.district_num, // Returning district_num from DB
             score: scoreMap[p.id] || 0
         }));
 
